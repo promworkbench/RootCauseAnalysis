@@ -131,6 +131,8 @@
 			<fileset dir=".">
 				<include name="src/**/*.java" />
 				<exclude name="src/test/**/*.java" />
+				<!-- The next file causes javadoc to break on GitHub -->
+				<exclude name="src/org/processmining/rootcauseanalysis/exceptions/NotImplementedYetException.java" />
 			</fileset>
 		</javadoc>
 	</target>
@@ -192,8 +194,7 @@
 	</target>
 	
 	<!-- Target to use to build the project on Hudson -->
-	<target name="buildHudson" depends="clean,resolve,javadoc,compile,makejar,archive" />
-	
+-	<target name="buildHudson" depends="clean,resolve,javadoc,compile,makejar,archive" />	
 	<!-- Target to use to prepare for a downstream build -->
 	<!-- The upstream changes will be copied in following this target -->
 	<target name="prepareDownstream" depends="clean,resolve" />
