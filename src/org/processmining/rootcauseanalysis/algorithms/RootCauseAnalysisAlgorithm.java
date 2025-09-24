@@ -14,7 +14,7 @@ import org.processmining.contextawareperformance.models.eventcollectionentities.
 import org.processmining.contextawareperformance.models.eventcollectionviews.EventCollectionViewType;
 import org.processmining.contextawareperformance.models.functions.context.Context;
 import org.processmining.contextawareperformance.models.functions.performance.Performance;
-import org.processmining.contextawareperformance.models.preprocessors.xlog.activityinstance.assign.AssignActivityInstanceXLogPreprocessor;
+//import org.processmining.contextawareperformance.models.preprocessors.xlog.activityinstance.assign.AssignActivityInstanceXLogPreprocessor;
 import org.processmining.contextawareperformance.models.preprocessors.xlog.event.remove.RemoveEventsWithoutTimestampXLogPreprocessor;
 import org.processmining.framework.plugin.PluginContext;
 import org.processmining.rootcauseanalysis.algorithms.causality.GrangerCausalityAlgorithm;
@@ -63,8 +63,8 @@ public class RootCauseAnalysisAlgorithm {
 		RemoveEventsWithoutTimestampXLogPreprocessor removeEventsWithoutTimestampPreprocessor = new RemoveEventsWithoutTimestampXLogPreprocessor();
 		eventlogout = removeEventsWithoutTimestampPreprocessor.preprocess(eventlog);
 
-		AssignActivityInstanceXLogPreprocessor activityInstancePreprocessor = new AssignActivityInstanceXLogPreprocessor();
-		eventlogout = activityInstancePreprocessor.preprocess(eventlogout);
+//		AssignActivityInstanceXLogPreprocessor activityInstancePreprocessor = new AssignActivityInstanceXLogPreprocessor();
+//		eventlogout = activityInstancePreprocessor.preprocess(eventlogout);
 
 		// Create event collection from XLog
 		eventCollection = new EventCollection(eventlogout);
